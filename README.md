@@ -12,10 +12,7 @@ The client communicates with a backend API to fetch marathon data and handle aut
 
 ---
 
-## Screenshot
 
-![Client Screenshot](./screenshot.png)  
-*(Add a screenshot named `screenshot.png` in the root folder)*
 
 ---
 
