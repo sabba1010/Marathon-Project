@@ -1,12 +1,61 @@
-# React + Vite
+# Marathon Management System - 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Live ](https://transcendent-croquembouche-dcb042.netlify.app/)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## Expanding the ESLint configuration
+This is the **frontend** client for the Marathon Management System built with React.  
+Users can register, login, view available marathons, register for events, and see their registrations.  
+The client communicates with a backend API to fetch marathon data and handle authentication via Firebase.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Screenshot
+
+![Client Screenshot](./screenshot.png)  
+*(Add a screenshot named `screenshot.png` in the root folder)*
+
+---
+
+## Technology Stack
+
+- React
+- Firebase Authentication (Email/Password & Google OAuth)
+- TailwindCSS
+- React Router
+- React Toastify
+
+---
+
+## Features
+
+- User registration and login with Firebase Authentication
+- Protected routes for authenticated users
+- View marathon events with search and sorting
+- Register for marathons and see user dashboard
+- Responsive design with TailwindCSS
+- Toast notifications for success/error messages
+
+---
+
+## Dependencies
+
+- react
+- react-router-dom
+- firebase
+- react-toastify
+- axios
+- tailwindcss
+
+---
+
+## Getting Started Locally
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/sabba1010/marathon-management-client.git
+cd marathon-management-client
+
