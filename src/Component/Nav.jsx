@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [dashboardOpen, setDashboardOpen] = useState(false); // For dashboard dropdown on desktop
+  const [dashboardOpen, setDashboardOpen] = useState(false);
   const { user, logout } = useContext(AuthContext);
 
   const handleLogout = async () => {
@@ -30,7 +30,7 @@ const Nav = () => {
     }`;
 
   return (
-    <div className="navbar bg-base-100 shadow-md">
+    <div className="navbar bg-base-100 shadow-md sticky top-0 z-50 px-4">
       <div className="container mx-auto w-full flex items-center justify-between py-2">
         {/* Logo */}
         <div className="navbar-start">
@@ -44,15 +44,22 @@ const Nav = () => {
           <ul className="menu menu-horizontal px-1 gap-2 font-medium items-center">
             <li><NavLink to="/" className={navLinkClass}>Home</NavLink></li>
             <li><NavLink to="/marathons" className={navLinkClass}>Marathons</NavLink></li>
-            <li><NavLink to="/dashboard/my-profile" className={navLinkClass}>Dashboard</NavLink></li>
             {user && (
               <li
                 className="relative"
                 onMouseEnter={() => setDashboardOpen(true)}
                 onMouseLeave={() => setDashboardOpen(false)}
               >
-             
-              
+                <button className="flex items-center gap-1">
+                  Dashboard <ChevronDown className="w-4 h-4" />
+                </button>
+                {dashboardOpen && (
+                  <ul className="absolute top-8 left-0 bg-base-100 text-base-content rounded shadow p-2 z-40 min-w-[180px]">
+                    <li><NavLink to="/dashboard/my-marathons" className="block px-3 py-1 hover:bg-base-200 rounded">My Marathons</NavLink></li>
+                    <li><NavLink to="/dashboard/add-marathon" className="block px-3 py-1 hover:bg-base-200 rounded">Add Marathon</NavLink></li>
+                    <li><NavLink to="/dashboard/profile" className="block px-3 py-1 hover:bg-base-200 rounded">Profile</NavLink></li>
+                  </ul>
+                )}
               </li>
             )}
           </ul>
@@ -95,8 +102,8 @@ const Nav = () => {
 
       {/* Mobile Menu Dropdown */}
       {isOpen && (
-        <div className="md:hidden px-4 pb-4 pt-2">
-          <ul className="menu bg-base-100 rounded-box shadow-md w-full font-medium items-center">
+        <div className="md:hidden px-4 pb-4 pt-2 bg-base-100 text-base-content">
+          <ul className="menu rounded-box w-full font-medium items-center">
             <li><NavLink to="/" className={navLinkClass}>Home</NavLink></li>
             <li><NavLink to="/marathons" className={navLinkClass}>Marathons</NavLink></li>
             {user && (
@@ -107,7 +114,6 @@ const Nav = () => {
                 <li><NavLink to="/dashboard/profile" className={navLinkClass}>Profile</NavLink></li>
               </>
             )}
-
             {user ? (
               <>
                 <li className="mt-2 text-center font-medium text-green-600">

@@ -82,7 +82,7 @@ const router = createBrowserRouter([
             element: <UpdateMarathon />,
           },
           {
-            path: "my-profile",
+            path: "profile",
             element: <ProfilePage />,
           },
           {
