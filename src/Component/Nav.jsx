@@ -44,6 +44,7 @@ const Nav = () => {
           <ul className="menu menu-horizontal px-1 gap-2 font-medium items-center">
             <li><NavLink to="/" className={navLinkClass}>Home</NavLink></li>
             <li><NavLink to="/marathons" className={navLinkClass}>Marathons</NavLink></li>
+            <li><NavLink to="/about" className={navLinkClass}>About</NavLink></li>
             {user && (
               <li
                 className="relative"
