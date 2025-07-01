@@ -56,7 +56,7 @@ const DashboardLayout = () => {
           <li>
             <Link
               to="/dashboard/profile"
-              className={isActive("/dashboard/my-profile") ? "bg-green-600 text-white" : ""}
+              className={isActive("/dashboard/profile") ? "bg-green-600 text-white" : ""}
             >
               My Profile
             </Link>
@@ -69,7 +69,6 @@ const DashboardLayout = () => {
               My Apply List
             </Link>
           </li>
-      
         </ul>
       </div>
     </div>

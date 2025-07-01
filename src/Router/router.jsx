@@ -15,6 +15,7 @@ import MarathonApplyPage from "../Component/MarathonApplyPage";
 import DashboardLayout from "../Component/DashboardLayout";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import NotFound from "../Pages/NotFound";
+import About from "../Component/About";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <Login />,
+      },
+      {
+        path:"/about",
+        Component:About,
       },
       {
         path: "register",
